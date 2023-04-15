@@ -22,3 +22,12 @@ resource "aws_s3_bucket_policy" "my_aws_s3_bucket_policy" {
     ]
   })
 }
+
+resource "aws_s3_bucket" "backend_s3_bucket" {
+  bucket = "kyle-mcv-backend-s3-bucket"
+
+  website {
+    index_document = "index.html"
+    error_document = "index.html"
+  }
+}
